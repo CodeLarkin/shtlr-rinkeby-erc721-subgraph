@@ -1,16 +1,16 @@
 specVersion: 0.0.2
-description: Generic ERC721 Subgraph (Transfers, Metadata)
-repository: https://github.com/schmidsi/generic-erc721-subgraph
+description: FTG1 ERC721 Subgraph (Transfers, Metadata)
+repository: https://github.com/CodeLarkin/ftg1-erc721-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: Hashmasks # Change me
-    network: mainnet
+    name: CodeLarkin
+    network: fantom
     source:
-      address: '0xC2C747E0F7004F9E8817Db2ca4997657a7746928' # Change me
+      address: '0x4F46C9D58c9736fe0f0DB5494Cf285E995c17397'
       abi: ERC721
-      startBlock: 11743743 # Change me
+      startBlock: 19891540
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
