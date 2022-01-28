@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: FTG1 ERC721 Subgraph (Transfers, Metadata)
-repository: https://github.com/CodeLarkin/ftg1-erc721-subgraph
+description: Fantomons Gen 1 ERC721 Subgraph (Transfers, Metadata)
+repository: https://github.com/CodeLarkin/fmong1-erc721-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,9 +8,9 @@ dataSources:
     name: CodeLarkin
     network: fantom
     source:
-      address: '0x4F46C9D58c9736fe0f0DB5494Cf285E995c17397'
+      address: '0xC93F8096f003B09690A546d40cbB971e9346dcf3'
       abi: ERC721
-      startBlock: 19891540
+      startBlock: 29200000
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
