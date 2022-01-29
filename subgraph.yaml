@@ -5,15 +5,14 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: CodeLarkin
+    name: FantomonGen1
     network: fantom
     source:
-      address: '0xC93F8096f003B09690A546d40cbB971e9346dcf3'
+      address: "0xC93F8096f003B09690A546d40cbB971e9346dcf3"
       abi: ERC721
-      startBlock: 29200000
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.4
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
         - Token

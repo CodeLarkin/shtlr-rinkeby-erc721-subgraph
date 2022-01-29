@@ -110,7 +110,7 @@ export class Transfer__Params {
   }
 }
 
-export class ERC721__royaltyInfoResult {
+export class FantomonGen1__royaltyInfoResult {
   value0: Address;
   value1: BigInt;
 
@@ -127,9 +127,9 @@ export class ERC721__royaltyInfoResult {
   }
 }
 
-export class ERC721 extends ethereum.SmartContract {
-  static bind(address: Address): ERC721 {
-    return new ERC721("ERC721", address);
+export class FantomonGen1 extends ethereum.SmartContract {
+  static bind(address: Address): FantomonGen1 {
+    return new FantomonGen1("FantomonGen1", address);
   }
 
   balanceOf(owner: Address): BigInt {
@@ -330,7 +330,10 @@ export class ERC721 extends ethereum.SmartContract {
     return ethereum.CallResult.fromValue(value[0].toAddress());
   }
 
-  royaltyInfo(_tokenId: BigInt, _salePrice: BigInt): ERC721__royaltyInfoResult {
+  royaltyInfo(
+    _tokenId: BigInt,
+    _salePrice: BigInt
+  ): FantomonGen1__royaltyInfoResult {
     let result = super.call(
       "royaltyInfo",
       "royaltyInfo(uint256,uint256):(address,uint256)",
@@ -340,7 +343,7 @@ export class ERC721 extends ethereum.SmartContract {
       ]
     );
 
-    return new ERC721__royaltyInfoResult(
+    return new FantomonGen1__royaltyInfoResult(
       result[0].toAddress(),
       result[1].toBigInt()
     );
@@ -349,7 +352,7 @@ export class ERC721 extends ethereum.SmartContract {
   try_royaltyInfo(
     _tokenId: BigInt,
     _salePrice: BigInt
-  ): ethereum.CallResult<ERC721__royaltyInfoResult> {
+  ): ethereum.CallResult<FantomonGen1__royaltyInfoResult> {
     let result = super.tryCall(
       "royaltyInfo",
       "royaltyInfo(uint256,uint256):(address,uint256)",
@@ -363,7 +366,10 @@ export class ERC721 extends ethereum.SmartContract {
     }
     let value = result.value;
     return ethereum.CallResult.fromValue(
-      new ERC721__royaltyInfoResult(value[0].toAddress(), value[1].toBigInt())
+      new FantomonGen1__royaltyInfoResult(
+        value[0].toAddress(),
+        value[1].toBigInt()
+      )
     );
   }
 
